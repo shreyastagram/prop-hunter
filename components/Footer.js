@@ -26,7 +26,7 @@ export default function Footer({ id }) {
           </Link>
 
           {/* Call Us link styled as a button */}
-          <Link href="tel:+1234567890" passHref>
+          <Link href="tel:+918446899354" passHref>
             <div className={styles.callUsButton}>Call Us</div>
           </Link>
         </div>

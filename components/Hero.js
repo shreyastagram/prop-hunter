@@ -12,7 +12,7 @@ export default function Hero({ id }) {
             variant="contained"
             color="primary"
             className={styles.button}
-            href="tel:+11234567890"
+            href="tel:+918446899354"
           >
             Contact Us
           </Button>
