@@ -1,0 +1,117 @@
+/* Hero.module.css */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    background: url('/hero-background.png') no-repeat center center/cover;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: brightness(50%); /* Dim the background image to 50% */
+    z-index: -1; /* Send the overlay behind the content */
+}
+
+.content {
+    max-width: 800px;
+    z-index: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background to the content */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.title {
+    font-size: 3.5rem; /* Larger title for more impact */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow for better readability */
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Shadow for the subtitle as well */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button {
+    font-size: 1rem;
+    padding: 12px 25px;
+    border-radius: 30px; /* Rounded button edges */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.1); /* Slightly enlarge buttons on hover */
+}
+
+.button:nth-child(1) {
+    background-color: #ff7f50; /* Orange color for 'Get Started' */
+    color: white;
+}
+
+.button:nth-child(2) {
+    background-color: #1e90ff; /* Blue color for 'Learn More' */
+    color: white;
+}
+
+.button:nth-child(2):hover {
+    background-color: #4682b4; /* Darker blue on hover for 'Learn More' */
+}
+
+/* Media Queries for Mobile and Tablet Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh; /* Reduce height for tablets */
+    }
+
+    .title {
+        font-size: 2.5rem; /* Adjust title font size for tablets */
+    }
+
+    .subtitle {
+        font-size: 1.2rem; /* Adjust subtitle font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh; /* Reduce height for mobile */
+    }
+
+    .title {
+        font-size: 2rem; /* Adjust title font size for mobile */
+    }
+
+    .subtitle {
+        font-size: 1rem; /* Adjust subtitle font size for mobile */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+    }
+
+    .button {
+        width: 100%; /* Make buttons full width on mobile */
+        margin-bottom: 10px; /* Add some space between buttons */
+    }
+}

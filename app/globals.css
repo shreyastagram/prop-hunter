@@ -14,6 +14,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+
 }
 
 body {
@@ -38,5 +40,165 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+/* Base styles for the header and content */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+body {
+  margin-top: 60px; /* Adjust this if your header height is different */
+}
+
+.hero, .features, .footer {
+  padding-top: 60px; /* Adjust this to match your header height */
+}
+
+/* Highlight active nav link */
+.navButton.active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--foreground);
+}
+
+/* For large screens like desktop */
+@media (min-width: 1024px) {
+  body {
+    margin-top: 60px; /* Ensures content does not go under the header */
+  }
+
+  header {
+    position: fixed;
+  }
+
+  .hero, .features, .footer {
+    padding-top: 60px; /* Ensures space for fixed header */
+  }
+
+  .navLinks {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* For tablets and smaller desktop screens */
+@media (max-width: 1024px) and (min-width: 768px) {
+  body {
+    margin-top: 70px; /* Ensure there's space for header */
+  }
+
+  header {
+    position: fixed;
+  }
+
+  .hero, .features, .footer {
+    padding-top: 70px; /* Adjusted for smaller screens */
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navButton {
+    font-size: 14px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  body {
+    margin-top: 70px; /* Adjust for smaller screens */
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+  }
+
+  .hero, .features, .footer {
+    padding-top: 70px; /* Ensure content doesn't hide under fixed header */
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navButton {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .logoText {
+    font-size: 16px; /* Adjust logo text size */
+  }
+
+  .logoImage {
+    max-width: 100px; /* Adjust logo image size */
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+  body {
+    margin-top: 80px; /* Further adjust for very small screens */
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+  }
+
+  .hero, .features, .footer {
+    padding-top: 80px; /* Adjust padding for very small screens */
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navButton {
+    font-size: 10px; /* Make buttons smaller on very small screens */
+  }
+
+  .logoText {
+    font-size: 14px;
+  }
+
+  .logoImage {
+    max-width: 80px;
+  }
+}
+
+/* Dark mode styling */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+
+  header {
+    background-color: var(--background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+  }
+
+  .navButton.active {
+    border-bottom: 2px solid var(--foreground);
   }
 }

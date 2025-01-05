@@ -1,0 +1,148 @@
+/* Header.module.css */
+
+/* AppBar Styles */
+.appBar {
+    background-color: #333; /* Default dark background */
+    color: white;
+    padding: 10px 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .appBar.scrolled {
+    background-color: #005f88; /* Darker blue when scrolled */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on scroll */
+  }
+  
+  /* Toolbar Styles */
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Logo Styles */
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logoImage {
+    width: 40px; /* Size of logo image */
+    height: auto;
+    border-radius: 5px; /* Rounded corners for the logo */
+    object-fit: contain;
+  }
+  
+  .logoText {
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Slight spacing for a sleek look */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .logoText:hover {
+    color: #ff0; /* Change to yellow on hover */
+  }
+  
+  /* Navbar Links */
+  .navLinks {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  .navButton {
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: white;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .navButton:hover {
+    background-color: #ff0; /* Background changes to yellow on hover */
+    color: #333; /* Text color changes to dark */
+    transform: scale(1.05); /* Slight scale effect for emphasis */
+  }
+  
+  /* Active NavLink Style */
+  .navButton.active {
+    background-color: #ff0;
+    color: #333;
+    font-weight: 700; /* Make active link bold */
+  }
+/* Media Queries for Mobile and Tablet Responsiveness */
+@media (max-width: 768px) { 
+    /* For tablets and below */
+    
+    .appBar {
+      padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .toolbar {
+      flex-direction: row; /* Keep the flex direction as is */
+      align-items: center; /* Center content horizontally */
+    }
+  
+    .navLinks {
+      flex-direction: row; /* Keep links in a row */
+      justify-content: center; /* Center links in the row */
+      width: 100%; /* Take full width */
+      gap: 15px; /* Space between links */
+      margin-top: 15px; /* Add margin to space out links from the logo */
+    }
+  
+    .logoText {
+      font-size: 1.5rem; /* Reduce logo text size for smaller screens */
+      white-space: nowrap; /* Prevent the text from wrapping onto a new line */
+    }
+  
+    .navButton {
+      font-size: 0.9rem; /* Adjust font size for smaller devices */
+      padding: 8px 12px; /* Adjust padding for smaller buttons */
+    }
+  }
+  
+  @media (max-width: 480px) { 
+    /* For mobile devices */
+    
+    .appBar {
+      padding: 10px 15px; /* Adjust padding for mobile screens */
+    }
+  
+    .toolbar {
+      flex-direction: row; /* Keep the flex direction as is */
+      align-items: center; /* Center content horizontally */
+    }
+  
+    .navLinks {
+      flex-direction: row; /* Keep the nav links in a row */
+      gap: 10px; /* Reduce gap between links */
+      align-items: center; /* Center links in the row */
+    }
+  
+    .logoText {
+      font-size: 1.3rem; /* Further reduce logo text size for mobile */
+      white-space: nowrap; /* Prevent text from wrapping onto a new line */
+      display: none; /* Hide the logo text on mobile */
+    }
+  
+    .navButton {
+      font-size: 0.8rem; /* Further reduce button text size */
+      padding: 8px 10px; /* Adjust button padding */
+      width: 100%; /* Make buttons full-width for easy tap */
+    }
+  
+    .navButton:hover {
+      transform: scale(1.05); /* Add a scale effect to buttons */
+    }
+  }
+  
