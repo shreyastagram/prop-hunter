@@ -1,13 +1,12 @@
 'use client'
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
-import styles from "./Header.module.css";
+import styles from "./Header.module.css"; 
 import { useState, useEffect } from "react";
 
 export default function Header({ id }) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
-  // Detect scroll for sticky effect and active section
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -38,12 +37,19 @@ export default function Header({ id }) {
     <AppBar
       id={id}
       position="fixed"
-      className={`${styles.appBar} ${scrolled ? styles.scrolled : ""}`}
+      sx={{
+        background: scrolled
+          ? "linear-gradient(to right, #111, #555)"  // Gradient on scroll
+          : "#333", // Dark background when not scrolled
+        color: "white", // White text color
+        boxShadow: scrolled ? "0px 6px 12px rgba(0, 0, 0, 0.3)" : "0px 4px 8px rgba(0, 0, 0, 0.2)", // Box shadow
+        padding: "10px 30px", // Padding for AppBar
+      }}
     >
       <Toolbar className={styles.toolbar}>
         <div className={styles.logoContainer}>
           <img
-            src="/prop-hunter.png" // Replace with your image path
+            src="/prop-hunter.png"
             alt="PROP-hunter Logo"
             className={styles.logoImage}
           />
@@ -55,7 +61,7 @@ export default function Header({ id }) {
           <Button
             color="inherit"
             className={`${styles.navButton} ${
-              activeSection === "hero" ? "active" : ""
+              activeSection === "hero" ? styles.active : ""
             }`}
             href="#hero"
           >
@@ -64,7 +70,7 @@ export default function Header({ id }) {
           <Button
             color="inherit"
             className={`${styles.navButton} ${
-              activeSection === "features" ? "active" : ""
+              activeSection === "features" ? styles.active : ""
             }`}
             href="#features"
           >
@@ -73,7 +79,7 @@ export default function Header({ id }) {
           <Button
             color="inherit"
             className={`${styles.navButton} ${
-              activeSection === "contact" ? "active" : ""
+              activeSection === "contact" ? styles.active : ""
             }`}
             href="#contact"
           >

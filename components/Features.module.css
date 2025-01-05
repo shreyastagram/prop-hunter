@@ -3,15 +3,24 @@
 .features {
     padding: 50px 20px;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light mode background */
     margin-bottom: 40px;
-}
+  }
+  
+  /* Dark Mode Gradient */
+  @media (prefers-color-scheme: dark) {
+    .features {
+      background: linear-gradient(135deg, #333, #555); /* Dark gradient */
+      color: #ededed; /* Lighter text for better contrast */
+    }
+  }
+  
 
 .heading {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #333;
+    color: white;
 }
 
 .grid {
